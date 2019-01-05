@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h1 class="display-4">Angular Telegraph</h1>
+        <p class="lead">This app simulates a telegraph with Morse Code.</p>
+      </div>
+      <div class="col-sm display-image">
+        <img src="../../assets/Radio Signal.png">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <form (ngSubmit)="sendTelegraph()" #messageForm="ngForm">
+          <div class="form-group">
+            <label for="name">Enter message for telegraph here</label>
+            <input type="text" class="form-control" id="messageText" required [(ngModel)]="message" name="messageText" #messageText="ngModel" pattern="[A-Za-z0-9 ]+">
+            <div [hidden]="messageText.valid || messageText.pristine" class="alert alert-danger">
+              message must only be numbers or letters
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success" [disabled]="!messageForm.form.valid">Send Telegraph</button>
+        </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <canvas id="flashlight" width="100%" height="100%" class="flashlight"></canvas>
+    </div>
+    <div class='col-sm output'>
+      {{output}}
+    </div>
+  </div>
+</div>

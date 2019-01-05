@@ -1,0 +1,14 @@
+.display-image {
+    display: flex;
+    align-content: flex-start;
+}
+
+.flashlight {
+    padding-top: 4em;
+}
+
+.output { 
+    width: 10em;
+    font-weight: bold;
+    font-size: 4em;
+}
